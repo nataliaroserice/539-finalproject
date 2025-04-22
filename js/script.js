@@ -1,0 +1,9 @@
+// Click to flip javascript... Code developed with the help of W3Schools How To- Flip Card (https://www.w3schools.com/howto/howto_css_flip_card.asp) and Code Pen (https://codepen.io/mondal10/pen/WNNEvjV)
+
+document.querySelectorAll('.card-container').forEach(container => {
+  const card = container.querySelector('.card');
+
+  container.addEventListener('click', () => {
+    card.classList.toggle('flipped');
+  });
+});
