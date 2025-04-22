@@ -49,8 +49,8 @@ nav ul li a {
   background-color: #1F4A2A;
   padding: 15px 0;
   text-align: center;
-  position: fixed;
-  z-index: 1000;
+  /* position: fixed;
+  z-index: 1000; */
   width: 100%;
   margin: 20px;
 }
@@ -252,9 +252,9 @@ footer p {
   .plant-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .hero-heading {
+  /* .hero-heading {
     margin-top: 100px;
-  }
+  } */
 }
 
 /* Laptop */
