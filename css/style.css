@@ -23,6 +23,10 @@ body {
   width: 60%;
 }
 
+.hero-heading {
+  margin-top: 100px;
+}
+
 footer {
   text-align: center;
   padding: 1rem;
@@ -45,6 +49,10 @@ nav ul li a {
   background-color: #1F4A2A;
   padding: 15px 0;
   text-align: center;
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  margin: 20px;
 }
 
 .header nav ul {
@@ -243,6 +251,9 @@ footer p {
 @media screen and (min-width: 768px) {
   .plant-grid {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .hero-heading {
+    margin-top: 100px;
   }
 }
 
