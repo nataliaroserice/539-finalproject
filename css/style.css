@@ -3,8 +3,6 @@
 
 body {
   font-family: "Athelas", serif;
-  margin: 0;
-  padding: 0;
   background-color: #FFF5E3;
   color: #1F4A2A;
 }
@@ -21,6 +19,10 @@ body {
   border: #1F4A2A;
 }
 
+.logo {
+  width: 60%;
+}
+
 footer {
   text-align: center;
   padding: 1rem;
@@ -28,8 +30,6 @@ footer {
 }
 
 nav ul {
-  padding: 0;
-  margin: 0;
   gap: 1rem;
 }
 
@@ -49,7 +49,6 @@ nav ul li a {
 
 .header nav ul {
   list-style: none;
-  padding: 0;
 }
 
 .header nav ul li {
@@ -101,7 +100,7 @@ p {
 }
 
 .card-container {
-  perspective: 1000px;
+  /* perspective: 1000px; */
   cursor: pointer;
   outline: none;
 }
@@ -127,7 +126,7 @@ p {
   transform: rotateY(180deg);
 }
 
-/* Developed with support from  */
+/* Developed with support from W3 Schools*/
 .card-front,
 .card-back {
   position: absolute;
@@ -185,7 +184,6 @@ footer p {
 
 .not-found h1 {
   font-size: 6rem;
-  margin: 0;
 }
 
 .not-found p {
@@ -204,13 +202,53 @@ footer p {
   text-decoration: underline;
 }
 
-@media screen and (min-width: 600px) {
+/* poster styling on About page */
+.about-section {
+  max-width: 700px;
+  margin: 4rem auto;
+  padding: 2rem;
+  background-color: #fcfaf7;
+  color: #1F4A2A;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: left;
+}
+
+.about-section h1 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.poster-image {
+  margin: 2rem 0;
+  text-align: center;
+}
+
+.poster-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.poster-image figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Media Queries */
+
+/* Tablet */
+@media screen and (min-width: 768px) {
   .plant-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-@media screen and (min-width: 900px) {
+/* Laptop */
+@media screen and (min-width: 992px) {
   .plant-grid {
     grid-template-columns: repeat(3, 1fr);
   }
