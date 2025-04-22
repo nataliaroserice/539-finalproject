@@ -100,7 +100,6 @@ p {
 }
 
 .card-container {
-  /* perspective: 1000px; */
   cursor: pointer;
   outline: none;
 }
