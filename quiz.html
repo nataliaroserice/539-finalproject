@@ -1,0 +1,71 @@
+<!-- Code developed with support from this HTML quiz tutuorial: https://medium.com/@codepicker57/building-an-interactive-quiz-with-html-css-and-javascript-efe9bd8129e2 -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Plant Compatibility Quiz</title>
+  <link rel="stylesheet" type="text/css" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+    <header id="header" class="header">
+        <a href="#about" class="skip">Skip to Main Content</a>
+        <a href="index.html"><img src="images/new-logo.png" alt="The A-Z List of Hard-to-Kill Houseplants" class="logo"></a>
+        <nav class="header-nav-about" aria-label="Main Navigation">
+          <ul>
+            <li><a href = "index.html">Home</a></li>
+            <li><a href = "about.html">About This Project</a></li>
+            <li class="active"><a href = "quiz.html">Compatibility Quiz</a></li>
+          </ul>
+        </nav>
+      </header>
+
+  <main class="quiz-section">
+    <h1>Plant Compatibility Quiz</h1>
+    <p class="quiz-description">Are you in the market for a new plant, but want to make sure that it meets your lifestyle? Answer the following two questions and receive personalized plant recommendations!</p>
+
+    <br>
+
+    <!-- Questions -->
+    <form id="plant-quiz">
+      <fieldset>
+        <legend><strong>What kind of light does your space get?</strong></legend>
+        <label><input type="radio" name="light" value="low" required /> Low light (e.g., far from windows)</label><br>
+        <label><input type="radio" name="light" value="indirect" /> Indirect or filtered sunlight</label><br>
+        <label><input type="radio" name="light" value="bright" /> Bright, direct sunlight</label>
+      </fieldset>
+      <br>
+      <fieldset>
+        <legend><strong>How often do you want to water your plant?</strong></legend>
+        <label><input type="radio" name="water" value="infrequent" required /> Every couple weeks or when I remember</label><br>
+        <label><input type="radio" name="water" value="moderate" /> Once a week is doable</label><br>
+        <label><input type="radio" name="water" value="frequent" /> I like to check in on my plants often</label>
+      </fieldset>
+      <br>
+
+      <button type="submit">Find My Plant</button>
+    </form>
+
+    <section id="plant-result" class="hidden">
+        <h2>Your Plant Matches:</h2>
+        <div id="result-gallery" class="result-grid"></div>
+      </section>
+  </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>&copy; <span id="year"></span> A-Z List of Hard-to-Kill Houseplants</p>
+      <p> Developed for joy and designed with care by Natalia Rice.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

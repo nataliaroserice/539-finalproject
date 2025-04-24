@@ -20,11 +20,9 @@ body {
 }
 
 .logo {
-  width: 60%;
-}
-
-.hero-heading {
-  margin-top: 100px;
+  width: 40%;
+  display: block;
+  margin: auto;
 }
 
 footer {
@@ -33,6 +31,9 @@ footer {
   color: #1F4A2A;
 }
 
+nav {
+  margin-top: 80px;
+}
 nav ul {
   gap: 1rem;
 }
@@ -100,6 +101,7 @@ p {
   font-size: 1.5em;
 }
 
+/* Single column grid for mobile view */
 .plant-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -112,9 +114,22 @@ p {
   outline: none;
 }
 
-.card-container:focus {
+.key {
+  width: 60%;
+  display: block;
+  margin: auto;
+}
+
+
+/* Focus-visible only shows outline if navigating with keyboard; https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible */
+
+.card-container:focus-visible {
   outline: 3px solid #4caf50;
   outline-offset: 4px;
+}
+
+.card-container:focus {
+  outline: none;
 }
 
 .card {
@@ -177,7 +192,7 @@ footer p {
   margin: 0.5rem 0;
 }
 
-/* 404 Styling */
+/* 404 Page Styling */
 .not-found {
   display: flex;
   flex-direction: column;
@@ -209,16 +224,16 @@ footer p {
   text-decoration: underline;
 }
 
-/* poster styling on About page */
+/* About Page Styling */
 .about-section {
-  max-width: 700px;
+  max-width: 80%;
   margin: 4rem auto;
   padding: 2rem;
   background-color: #fcfaf7;
   color: #1F4A2A;
   font-size: 1.2rem;
   line-height: 1.6;
-  text-align: left;
+  text-align: center;
 }
 
 .about-section h1 {
@@ -230,18 +245,23 @@ footer p {
 .poster-image {
   margin: 2rem 0;
   text-align: center;
+
 }
 
 .poster-image img {
   width: 100%;
-  max-width: 500px;
+  max-width: 80%;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
+  justify-content: center;
+  align-items: center;
+  display: block;
+  margin: auto;
+  width: 50%;
+  }
 
 .poster-image figcaption {
   margin-top: 0.75rem;
-  font-size: 0.95rem;
   color: #555;
 }
 
@@ -255,11 +275,132 @@ footer p {
   /* .hero-heading {
     margin-top: 100px;
   } */
+  .about-section {
+    margin: 4rem auto;
+    padding: 2rem;
+    background-color: #fcfaf7;
+    color: #1F4A2A;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: center;
+  }
 }
+
+/* Plant Quiz Styling! */
+.quiz-section p {
+  font-size: 1em;
+}
+
+
+.quiz-section {
+  max-width: 80%;
+  margin: 3rem auto;
+  padding: 2rem;
+  background-color: #fcfaf7;
+  border-radius: 10px;
+  font-size: 1.2rem;
+}
+
+button[type="submit"] {
+  background-color: #1F4A2A;
+  color: white;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #336633;
+}
+
+#plant-result {
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+@media screen and (min-width: 600px) {
+  .result-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .result-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.result-card {
+  background-color: #fcfaf7;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+  text-align: center;
+  padding: 1rem;
+}
+
+.result-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+.result-card h3 {
+  margin: 0.75rem 0 0.25rem;
+}
+
+.result-card p {
+  margin: 0;
+  font-size: 0.95rem;
+  color: #555;
+}
+
 
 /* Laptop */
 @media screen and (min-width: 992px) {
   .plant-grid {
     grid-template-columns: repeat(3, 1fr);
   }
+}
+
+/* Prefers reduced motion updates -- the cards will not flip when clicked, but will instead just change to the back */
+@media (prefers-reduced-motion: reduce) {
+  .card {
+    transition: none !important;
+    transform: rotateY(180deg) !important;
+  }
+}
+
+/* Scroll to top button styling - code sourced from W3 Schools: https://www.w3schools.com/howto/howto_js_scroll_to_top.asp  */
+#to-top {
+  display: none; /* Hidden by default */
+  position: fixed; /* Fixed/sticky position */
+  bottom: 20px; /* Place the button at the bottom of the page */
+  right: 30px; /* Place the button 30px from the right */
+  z-index: 99; /* Make sure it does not overlap */
+  border: none; /* Remove borders */
+  outline: none; /* Remove outline */
+  background-color: #1F4A2A; /* Set a background color */
+  color: white; /* Text color */
+  cursor: pointer; /* Add a mouse pointer on hover */
+  padding: 15px; /* Some padding */
+  border-radius: 10px; /* Rounded corners */
+  font-size: 18px; /* Increase font size */
+}
+
+#to-top:hover {
+  background-color: #555; /* Add a dark-grey background on hover */
 }

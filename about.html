@@ -6,14 +6,15 @@
   <link rel="stylesheet" type="text/css" href="css/reset.css">
   <link rel="stylesheet" type="text/css" href="css/style.css">
   <link href="https://fonts.googleapis.com/css2?family=Athelas&display=swap" rel="stylesheet">
+  <link href="dist/css/lightbox.css" rel="stylesheet" />
   <title>About This Project</title>
 </head>
 
 
 <header id="header" class="header">
-    <a href="#main" class="skip">Skip to Main Content</a>
-    <img src="images/az-logo.png" alt="written logo" class="logo">
-    <nav class="header-nav" aria-label="Main Navigation">
+    <a href="#about" class="skip">Skip to Main Content</a>
+    <a href="index.html"><img src="images/new-logo.png" alt="The A-Z List of Hard-to-Kill Houseplants" class="logo"></a>
+    <nav class="header-nav-about" aria-label="Main Navigation">
       <ul>
         <li><a href = "index.html">Home</a></li>
         <li class="active"><a href = "about.html">About This Project</a></li>
@@ -23,7 +24,7 @@
   </header>
 
 <body>
-  <main class="about-section">
+  <main id="about" class="about-section">
     <h1>About This Project</h1>
     <p>
       This website is inspired by a poster I designed for a graphic design course. I developed an A-Z list of 26 low(ish) maintenance plants, illustrated each by hand, researched their care needs, and placed them all into a modular grid. Since then, I've considered how I could continue building on it: Stickers? Prints? 
@@ -40,11 +41,33 @@
     <p>
         Thanks for stopping by! 🌱
       </p>
-    <figure class="poster-image">
-        <img src="images/az-plant-poster.png" alt="Original A–Z houseplant poster with hand-drawn illustrations of each plant" />
-        <figcaption>The original poster that inspired this site, created for a modular grid challenge in my graphic design course.</figcaption>
+      <figure class="poster-image">
+        <a href="images/az-plant-poster.png" data-lightbox="poster" data-title="The original poster that inspired this site.">
+          <img src="images/az-plant-poster.png" alt="A–Z houseplant poster with hand-drawn illustrations of each plant" />
+        </a>
+        <figcaption>The original poster that inspired this site.</figcaption>
       </figure>
-    
+
+      <!-- Code from W3 Schools: https://www.w3schools.com/howto/howto_js_scroll_to_top.asp -->
+  <button onclick="topFunction()" id="to-top" title="Go to top">Back to Top</button>
   </main>
+
+  <footer>
+    <div class="footer-container">
+      <p>&copy; <span id="year"></span> A-Z List of Hard-to-Kill Houseplants</p>
+      <p> Developed for joy and designed with care by Natalia Rice.</p>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+<!-- Lightbox added courtesy of SI 539 Week 13 code, originally sourced from https://lokeshdhakar.com/projects/lightbox2/ -->
+  <script src="js/script.js"></script>
+  <script src="dist/js/lightbox-plus-jquery.js"></script>
+ 
+
+
 </body>
 </html>
