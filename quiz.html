@@ -5,14 +5,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Plant Compatibility Quiz</title>
   <link rel="stylesheet" type="text/css" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+
+  <!-- Favicon + variants generated via https://favicon.io/favicon-converter/ -->
+  <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+  <link rel="manifest" href="images/site.webmanifest">
+
+  <title>Plant Compatibility Quiz</title>
 </head>
 
 <body>
     <header id="header" class="header">
-        <a href="#about" class="skip">Skip to Main Content</a>
+        <a href="#quiz" class="skip">Skip to Main Content</a>
         <a href="index.html"><img src="images/new-logo.png" alt="The A-Z List of Hard-to-Kill Houseplants" class="logo"></a>
         <nav class="header-nav-about" aria-label="Main Navigation">
           <ul>
@@ -23,7 +31,7 @@
         </nav>
       </header>
 
-  <main class="quiz-section">
+  <main id="quiz" class="quiz-section">
     <h1>Plant Compatibility Quiz</h1>
     <p class="quiz-description">Are you in the market for a new plant, but want to make sure that it meets your lifestyle? Answer the following two questions and receive personalized plant recommendations!</p>
 
@@ -31,8 +39,8 @@
 
     <!-- Questions -->
     <form id="plant-quiz">
-      <fieldset>
-        <legend><strong>What kind of light does your space get?</strong></legend>
+      <fieldset class="fieldset">
+        <legend class="legend"><strong>What kind of light does your space get?</strong></legend>
         <label><input type="radio" name="light" value="low" required /> Low light (e.g., far from windows)</label><br>
         <label><input type="radio" name="light" value="indirect" /> Indirect or filtered sunlight</label><br>
         <label><input type="radio" name="light" value="bright" /> Bright, direct sunlight</label>
@@ -67,5 +75,6 @@
   </script>
 
   <script src="js/script.js"></script>
+
 </body>
 </html>

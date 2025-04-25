@@ -38,20 +38,32 @@ function topFunction() {
   document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
 }
 
+// Hamburger Menu
+
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
 
 // Quiz JS!!! Developed with support from many tutorials: https://medium.com/@codepicker57/building-an-interactive-quiz-with-html-css-and-javascript-efe9bd8129e2, https://zephyrnet.com/how-to-make-a-simple-javascript-quiz/, and https://www.sitepoint.com/community/t/very-simple-css-js-quiz/404183
-document.getElementById('plant-quiz').addEventListener('submit', function (e) {
-  e.preventDefault();
+const quizForm = document.getElementById('plant-quiz');
+if (quizForm) {
+  quizForm.addEventListener('submit', function (e) {
+    e.preventDefault();
 
-  const light = document.querySelector('input[name="light"]:checked').value;
-  const water = document.querySelector('input[name="water"]:checked').value;
-  const gallery = document.getElementById('result-gallery');
+    const light = document.querySelector('input[name="light"]:checked').value;
+    const water = document.querySelector('input[name="water"]:checked').value;
+    const gallery = document.getElementById('result-gallery');
 
-  let matches = [];
+    let matches = [];
 
   // Ensured that all possible combinations have a matching recommendation
 
-  if (light === "low" && water === "infrequent") {
+   if (light === "low" && water === "infrequent") {
     matches = ["ZZ Plant", "Snake Plant", "Cast Iron Plant"];
   } else if (light === "low" && water === "frequent") {
     matches = ["Peace Lily", "Bird’s Nest Fern"];
@@ -64,8 +76,8 @@ document.getElementById('plant-quiz').addEventListener('submit', function (e) {
   } else if (light === "bright" && water === "frequent") {
     matches = ["Fiddle Leaf Fig", "Elephant Ear", "Nanouk"];
   } else if (light === "indirect" && water === "frequent") {
-  matches = ["Fiddle Leaf Fig", "Elephant Ear", "Nanouk"];
-  } ["Golden Pothos", "Monstera"];
+  matches = ["Golden Pothos", "Monstera"];
+  }
 
   gallery.innerHTML = "";
 
@@ -82,6 +94,8 @@ document.getElementById('plant-quiz').addEventListener('submit', function (e) {
 
   document.getElementById('plant-result').classList.remove('hidden');
 });
+}
+
 
 // Plant descriptions 
 // Note: Plant descriptions developed using ChatGPT 4o on April 24, 2025. Prompt: Please generate brief, playful descriptions for each plant on this list to include in the results of "Hard to Kill Houseplants" compatibility quiz. 

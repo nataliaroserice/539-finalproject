@@ -20,9 +20,16 @@ body {
 }
 
 .logo {
-  width: 40%;
+  width: 40rem;
   display: block;
   margin: auto;
+}
+
+
+#key {
+  display: block;
+  margin: auto;
+  width: 100%;
 }
 
 footer {
@@ -33,6 +40,7 @@ footer {
 
 nav {
   margin-top: 80px;
+  justify-content: space-evenly;
 }
 nav ul {
   gap: 1rem;
@@ -47,17 +55,22 @@ nav ul li a {
 
 /* Nav Bar Styling - Adapted from my Client Project CSS*/
 .header nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
   background-color: #1F4A2A;
-  padding: 15px 0;
-  text-align: center;
-  /* position: fixed;
-  z-index: 1000; */
-  width: 100%;
-  margin: 20px;
+  margin: 0;
+  list-style: none;
 }
 
 .header nav ul {
-  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0;
+  margin:0;
 }
 
 .header nav ul li {
@@ -67,11 +80,12 @@ nav ul li a {
 }
 
 .header nav ul li a {
-  padding: 12px 20px;
+  padding: 0.625rem;
   color: #FFF5E3;
   text-decoration: none;
-  font-size: 1.5em;
-  border-radius: 5px;
+  font-size: 1.1rem;
+  border-radius: 0.3125rem;
+  text-align: center;
 }
 
 .header nav ul li a:hover, nav ul li a:focus {
@@ -85,7 +99,6 @@ nav ul li a {
   text-decoration: underline;
   border-radius: 5px;
 }
-
 
 .hero {
   background-color: #FFF5E3;
@@ -192,6 +205,9 @@ footer p {
   margin: 0.5rem 0;
 }
 
+
+
+
 /* 404 Page Styling */
 .not-found {
   display: flex;
@@ -223,6 +239,9 @@ footer p {
   font-weight: bold;
   text-decoration: underline;
 }
+
+
+
 
 /* About Page Styling */
 .about-section {
@@ -265,49 +284,65 @@ footer p {
   color: #555;
 }
 
-/* Media Queries */
 
-/* Tablet */
-@media screen and (min-width: 768px) {
-  .plant-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  /* .hero-heading {
-    margin-top: 100px;
-  } */
-  .about-section {
-    margin: 4rem auto;
-    padding: 2rem;
-    background-color: #fcfaf7;
-    color: #1F4A2A;
-    font-size: 1.2rem;
-    line-height: 1.6;
-    text-align: center;
-  }
-}
 
-/* Plant Quiz Styling! */
-.quiz-section p {
-  font-size: 1em;
-}
-
+/* Plant Quiz Styling */
 
 .quiz-section {
-  max-width: 80%;
+  width: 75%;
   margin: 3rem auto;
   padding: 2rem;
   background-color: #fcfaf7;
-  border-radius: 10px;
-  font-size: 1.2rem;
+  border-radius: 0.625rem;
+  font-size: 1.25rem;
+  text-align: center;
 }
+
+.quiz-section h1 {
+  font-size: 2.5rem;
+  text-align: center;
+}
+
+.quiz-section p {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.quiz-description {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+fieldset {
+  border: none;
+  margin: 2rem 0;
+  padding: 1rem;
+  text-align: left; 
+}
+
+legend {
+  font-size: 1.5rem;
+  font-weight: bold;
+  display: block;
+}
+
+label {
+  display: block;
+  margin: 0.5rem 0;
+  font-size: 1.35rem;
+}
+
+
+/* Button styling */
 
 button[type="submit"] {
   background-color: #1F4A2A;
   color: white;
-  padding: 10px 20px;
+  padding: 0.625rem 1.25rem;
   font-size: 1.2rem;
   border: none;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   cursor: pointer;
 }
 
@@ -331,22 +366,17 @@ button:hover {
   margin-top: 1.5rem;
 }
 
-@media screen and (min-width: 600px) {
-  .result-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+fieldset {
+  border: none;
+  margin: 1.5rem 0;
 }
 
-@media screen and (min-width: 900px) {
-  .result-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
+
 
 .result-card {
   background-color: #fcfaf7;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+  border-radius: 0.75rem;
+  box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.06);
   text-align: center;
   padding: 1rem;
 }
@@ -354,7 +384,7 @@ button:hover {
 .result-card img {
   width: 100%;
   height: auto;
-  border-radius: 8px;
+  border-radius: 0.5rem;
   object-fit: cover;
 }
 
@@ -369,10 +399,52 @@ button:hover {
 }
 
 
+
+
+/* Media Queries */
+
+
+/* Tablet */
+@media screen and (min-width: 768px) {
+  .plant-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  /* .hero-heading {
+    margin-top: 100px;
+  } */
+  .about-section {
+    margin: 4rem auto;
+    padding: 2rem;
+    background-color: #fcfaf7;
+    color: #1F4A2A;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    text-align: center;
+  }
+
+  #key {
+    width: 65%;
+  }
+}
+
+
 /* Laptop */
 @media screen and (min-width: 992px) {
   .plant-grid {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .result-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Laptop */
+@media screen and (min-width: 1366px) {
+  .plant-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+  .result-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 
@@ -402,5 +474,9 @@ button:hover {
 }
 
 #to-top:hover {
-  background-color: #555; /* Add a dark-grey background on hover */
+  background-color: #5a8e42; /* Add a dark-grey background on hover */
 }
+
+
+
+
