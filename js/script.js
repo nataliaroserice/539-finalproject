@@ -7,6 +7,8 @@ document.querySelectorAll('.card-container').forEach(container => {
     card.classList.toggle('flipped');
   });
 
+  // This code is intended to make it keyboard accessible (can access each card and click enter to flip). Adapted from: https://stackoverflow.com/questions/62418249/css-flip-card-how-can-i-activate-the-flip-via-tab-so-it-is-keyboard-accessible
+  
   container.setAttribute('tabindex', '0');
   container.setAttribute('role', 'button');
   container.addEventListener('keydown', (e) => {

@@ -399,8 +399,6 @@ fieldset {
 }
 
 
-
-
 /* Media Queries */
 
 
@@ -438,7 +436,7 @@ fieldset {
   }
 }
 
-/* Laptop */
+/* Large Screen */
 @media screen and (min-width: 1366px) {
   .plant-grid {
     grid-template-columns: repeat(4, 1fr);
@@ -452,7 +450,6 @@ fieldset {
 @media (prefers-reduced-motion: reduce) {
   .card {
     transition: none !important;
-    transform: rotateY(180deg) !important;
   }
 }
 
